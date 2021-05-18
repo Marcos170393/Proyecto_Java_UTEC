@@ -94,9 +94,9 @@ public class MostrarLista extends JFrame {
 			
 		
 		table = new JTable();
-		boolean bander = true;
+		boolean bandera = true;
 							for(Persona persona: Main.listado) {
-									if(bander) {
+									if(bandera) {
 										table.setModel(new DefaultTableModel(
 											new Object[][] {
 												{persona.idPersona, persona.nombre.toUpperCase(), persona.apellido.toUpperCase(), persona.dptoResidencia.toUpperCase(), persona.getHijos(), persona.getDate()},
@@ -116,7 +116,7 @@ public class MostrarLista extends JFrame {
 												return columnTypes[columnIndex];
 											}
 										});
-										bander=false;
+										bandera=false;
 									}else {
 										DefaultTableModel model = (DefaultTableModel) table.getModel();
 										model.addRow(new Object[]{persona.idPersona, persona.nombre.toUpperCase(), persona.apellido.toUpperCase(), persona.dptoResidencia.toUpperCase(), persona.getHijos(), persona.getDate()});
