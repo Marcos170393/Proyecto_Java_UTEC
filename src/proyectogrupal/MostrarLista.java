@@ -75,7 +75,7 @@ public class MostrarLista extends JFrame {
 		btnNewButton.setBounds(5, 233, 424, 23);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ventana ventanaPrincipal = new ventana();
+				Ventana ventanaPrincipal = new Ventana();
 				dispose();
 				ventanaPrincipal.setVisible(true);
 			

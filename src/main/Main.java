@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Iterator;
 
-import proyectogrupal.ventana;
+import proyectogrupal.Ventana;
 
 public class Main {
 
@@ -19,7 +19,7 @@ public class Main {
 		 * LANZAMIENTO DE VENTANA PRINCIPAL
 		 * ..............................
 		 */
-		ventana inicio = new ventana();
+		Ventana inicio = new Ventana();
 		inicio.setVisible(true);
 		
 		/*............................
@@ -29,7 +29,7 @@ public class Main {
 		Persona marcos = new Persona(1,"Marcos","Correa","Canelones",(byte)0,LocalDate.of(1993,03,17));
 		Persona pedro = new Persona(2,"Pedro","Maciel","Montevideo",(byte)2,LocalDate.of(1996,05,19));
 		Persona natalia = new Persona(3,"Natalia","Larrosa","Canelones",(byte)4,LocalDate.of(1989,10,20));
-		Persona alejandro = new Persona(4,"Alejadro","Rodriguez","San José",(byte)1,LocalDate.of(1910,11,30));
+		Persona alejandro = new Persona(5,"Alejadro","Rodriguez","San José",(byte)1,LocalDate.of(1910,11,30));
 		ingresar(alejandro);
 		ingresar(marcos);
 		ingresar(natalia);

@@ -30,7 +30,7 @@ import javax.swing.JSlider;
 import java.awt.Insets;
 import java.awt.Cursor;
 
-public class ventana extends JFrame {
+public class Ventana extends JFrame {
 
 	private JPanel contentPane;
 
@@ -41,7 +41,7 @@ public class ventana extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ventana frame = new ventana();
+					Ventana frame = new Ventana();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -53,10 +53,10 @@ public class ventana extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ventana() {
+	public Ventana() {
 		setResizable(false);
 		setBackground(Color.BLACK);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(ventana.class.getResource("/proyectogrupal/Imagen/logo.jpeg")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Ventana.class.getResource("/proyectogrupal/Imagen/logo.jpeg")));
 		setTitle("Inicio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 577, 442);
@@ -88,7 +88,7 @@ public class ventana extends JFrame {
 		JMenuItem mntmNewMenuItem = new JMenuItem("Alta de personas");
 		mntmNewMenuItem.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mntmNewMenuItem.setMargin(new Insets(4, 0, 0, 2));
-		mntmNewMenuItem.setIcon(new ImageIcon(ventana.class.getResource("/proyectogrupal/Imagen/Add.png")));
+		mntmNewMenuItem.setIcon(new ImageIcon(Ventana.class.getResource("/proyectogrupal/Imagen/Add.png")));
 		mntmNewMenuItem.setBorder(null);
 		mntmNewMenuItem.setForeground(Color.DARK_GRAY);
 		mntmNewMenuItem.setBackground(Color.LIGHT_GRAY);
@@ -104,7 +104,7 @@ public class ventana extends JFrame {
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Ver listado");
 		mntmNewMenuItem_2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mntmNewMenuItem_2.setMargin(new Insets(4, 0, 2, 0));
-		mntmNewMenuItem_2.setIcon(new ImageIcon(ventana.class.getResource("/proyectogrupal/Imagen/List.png")));
+		mntmNewMenuItem_2.setIcon(new ImageIcon(Ventana.class.getResource("/proyectogrupal/Imagen/List.png")));
 		mntmNewMenuItem_2.setBorder(null);
 		mntmNewMenuItem_2.setForeground(Color.DARK_GRAY);
 		mntmNewMenuItem_2.setBackground(Color.LIGHT_GRAY);
@@ -120,7 +120,7 @@ public class ventana extends JFrame {
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Modificar Datos");
 		mntmNewMenuItem_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		mntmNewMenuItem_1.setMargin(new Insets(4, 0, 2, 0));
-		mntmNewMenuItem_1.setIcon(new ImageIcon(ventana.class.getResource("/proyectogrupal/Imagen/Edit.png")));
+		mntmNewMenuItem_1.setIcon(new ImageIcon(Ventana.class.getResource("/proyectogrupal/Imagen/Edit.png")));
 		mntmNewMenuItem_1.setBorder(null);
 		mntmNewMenuItem_1.setForeground(Color.DARK_GRAY);
 		mntmNewMenuItem_1.setBackground(Color.LIGHT_GRAY);
@@ -135,7 +135,7 @@ public class ventana extends JFrame {
 		mnNewMenu.add(mntmNewMenuItem_2);
 		
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Comprar Vehiculo");
-		mntmNewMenuItem_3.setIcon(new ImageIcon(ventana.class.getResource("/proyectogrupal/Imagen/buy.png")));
+		mntmNewMenuItem_3.setIcon(new ImageIcon(Ventana.class.getResource("/proyectogrupal/Imagen/buy.png")));
 		mntmNewMenuItem_3.setForeground(Color.DARK_GRAY);
 		mntmNewMenuItem_3.setBackground(Color.LIGHT_GRAY);
 		mntmNewMenuItem_3.setBorder(null);
@@ -150,7 +150,7 @@ public class ventana extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
-		lblNewLabel.setIcon(new ImageIcon(ventana.class.getResource("/proyectogrupal/Imagen/Logo_Wild Coders(Sin fondo).png")));
+		lblNewLabel.setIcon(new ImageIcon(Ventana.class.getResource("/proyectogrupal/Imagen/Logo_Wild Coders(Sin fondo).png")));
 		lblNewLabel.setBounds(165, 90, 227, 209);
 		contentPane.add(lblNewLabel);
 		

@@ -192,7 +192,7 @@ public class AltaPersona extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				ventana volverVentana = new ventana();
+				Ventana volverVentana = new Ventana();
 				volverVentana.setVisible(true);
 			}
 		});

@@ -139,7 +139,7 @@ public class ComprarVehiculo extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				ventana abrir = new ventana();
+				Ventana abrir = new Ventana();
 				abrir.setVisible(true);
 			}
 		});
