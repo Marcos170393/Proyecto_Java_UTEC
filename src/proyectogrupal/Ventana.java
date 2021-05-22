@@ -132,6 +132,45 @@ public class Ventana extends JFrame {
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem_1);
+		
+		JMenu mnNewMenu_1 = new JMenu("Alta de Veh\u00EDculo");
+		mnNewMenu_1.setBackground(Color.LIGHT_GRAY);
+		mnNewMenu_1.setForeground(Color.DARK_GRAY);
+		mnNewMenu_1.setIcon(new ImageIcon(Ventana.class.getResource("/proyectogrupal/Imagen/checked.png")));
+		mnNewMenu.add(mnNewMenu_1);
+		
+		JMenuItem mntmNewMenuItem_5 = new JMenuItem("Alta de Barco");
+		mntmNewMenuItem_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AltaBarco nuevaVentana = new AltaBarco();
+				nuevaVentana.setVisible(true);
+				dispose();
+			}
+		});
+		mnNewMenu_1.add(mntmNewMenuItem_5);
+		
+		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Alta de Avion");
+		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AltaAvion nuevaVentana = new AltaAvion();
+				nuevaVentana.setVisible(true);
+				dispose();
+			}
+		});
+		mnNewMenu_1.add(mntmNewMenuItem_6);
+		
+		JMenuItem mntmNewMenuItem_Inventario = new JMenuItem("Inventario");
+		mntmNewMenuItem_Inventario.setBackground(Color.LIGHT_GRAY);
+		mntmNewMenuItem_Inventario.setForeground(Color.DARK_GRAY);
+		mntmNewMenuItem_Inventario.setIcon(new ImageIcon(Ventana.class.getResource("/proyectogrupal/Imagen/warehouse.png")));
+		mntmNewMenuItem_Inventario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Inventario nuevaVentana = new Inventario();
+				nuevaVentana.setVisible(true);
+				dispose();
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem_Inventario);
 		mnNewMenu.add(mntmNewMenuItem_2);
 		
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Comprar Vehiculo");
@@ -147,6 +186,20 @@ public class Ventana extends JFrame {
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem_3);
+
+			JMenuItem mntmNewMenuItem_4 = new JMenuItem("Panel de control");
+			mntmNewMenuItem_4.setBackground(Color.LIGHT_GRAY);
+			mntmNewMenuItem_4.setForeground(Color.DARK_GRAY);
+			mntmNewMenuItem_4.setIcon(new ImageIcon(Ventana.class.getResource("/proyectogrupal/Imagen/control-panel.png")));
+			mntmNewMenuItem_4.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					dispose();
+					PanelDeControl abrir = new PanelDeControl();
+					abrir.setVisible(true);
+				}
+			});
+		
+			mnNewMenu.add(mntmNewMenuItem_4);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);

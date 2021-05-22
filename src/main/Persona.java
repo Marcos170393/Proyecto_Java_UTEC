@@ -12,6 +12,10 @@ public class Persona {
 	private LocalDate fechaNacimiento;
 	private HashMap<Integer,Vehiculo> listaVehiculos = new HashMap<Integer,Vehiculo>();
 	
+	public Persona() {
+		
+	};
+	
 	public Persona(int idPersona, String nombre, String apellido, String dptoResidencia, byte cantHijos,
 			LocalDate fechaNacimiento) {
 		super();

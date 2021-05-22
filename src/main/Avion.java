@@ -15,7 +15,7 @@ public class Avion extends Vehiculo{
 	 * @param cantPasajeros - Recibe int
 	 */
 	public Avion(int idVehiculo, String nombre, String color, double longitud, int cantPasajeros) {
-		super(idVehiculo, nombre, color);
+		super(idVehiculo,nombre, color);
 		
 		this.longitud = longitud;
 		this.cantPasajeros = cantPasajeros;

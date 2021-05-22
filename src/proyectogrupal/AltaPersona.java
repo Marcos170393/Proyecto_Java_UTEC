@@ -134,6 +134,7 @@ public class AltaPersona extends JFrame {
 						int dia = Integer.parseInt(textDia.getText());
 						int mes = Integer.parseInt(textMes.getText());
 						int anio = Integer.parseInt(textAnio.getText());
+							
 						Persona persona = new Persona(idI,nombre,apellido,dpto,hijos,LocalDate.of(anio, mes, dia));
 						Main.ingresar(persona);
 						bandera=1;

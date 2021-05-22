@@ -47,7 +47,7 @@ import javax.swing.JScrollPane;
 public class ComprarVehiculo extends JFrame {
 	private String seleccionCombo = ""; 
 	private int cantidadPasajeros=0;
-	
+	private int contador = 0;
 	
 	
 	/**
@@ -90,22 +90,51 @@ public class ComprarVehiculo extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("Jet Aircraft 2016");
 		lblNewLabel_1.setFont(new Font("Montserrat", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(102, 11, 130, 29);
+		lblNewLabel_1.setBounds(101, 22, 130, 29);
 		panel.add(lblNewLabel_1);
 		
 		JButton btnComprarJet = new JButton("Comprar");
 		btnComprarJet.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
-				boolean esta = false;
+				
+				boolean estaPersona = false;
+				boolean estaVehiculo = false;
 				Persona comprador = null;
-				while(!esta) {
+				
+				Vehiculo temp = null;
+				
+				while(!estaVehiculo) {
+					int idV = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el id del Jet")); 
+							for(Vehiculo v: Main.listaVehiculos) {
+								if(v.idVehiculo == idV) {
+									estaVehiculo = true;
+									if(v.dueno.idPersona == 0) {
+										temp = v;
+									}
+								}
+							}
+							
+							if(!estaVehiculo) {
+								Component Frame = null;
+								JOptionPane.showMessageDialog(Frame,"No se encontro el vehiculo.","Ventana de notificación", JOptionPane.ERROR_MESSAGE);
+							}else if(temp == null){
+								Component Frame = null;
+								JOptionPane.showMessageDialog(Frame,"El vehiculo tiene dueño.","Ventana de notificación", JOptionPane.ERROR_MESSAGE);
+							}
+				}
+				
+				
+				while(!estaPersona) {
 					String respuesta = JOptionPane.showInputDialog("Ingrese su Id"); 
 					int respuestaInt = Integer.parseInt(respuesta);
 					for(Persona p: Main.listado){
 						if(p.idPersona == respuestaInt) {
-							p.setVehiculo(1, Main.listaVehiculos.get(0));
+							temp.dueno = p;
+							p.setVehiculo(contador, temp);
 							comprador = p;
-							esta=true;
+							estaPersona=true;
+							contador++;
 							break;
 						}
 					}
@@ -119,16 +148,8 @@ public class ComprarVehiculo extends JFrame {
 			
 		});
 		
-		btnComprarJet.setBounds(301, 46, 89, 23);
+		btnComprarJet.setBounds(302, 27, 89, 23);
 		panel.add(btnComprarJet);
-		
-		Label label = new Label("Color:      azul");
-		label.setBounds(102, 46, 105, 22);
-		panel.add(label);
-		
-		Label label_1 = new Label("Capacidad:         2");
-		label_1.setBounds(274, 11, 130, 22);
-		panel.add(label_1);
 		
 		JLabel lblNewLabel_5 = new JLabel("New label");
 		lblNewLabel_5.setIcon(new ImageIcon(ComprarVehiculo.class.getResource("/proyectogrupal/Imagen/jet_1_chico.jpg")));
@@ -155,22 +176,50 @@ public class ComprarVehiculo extends JFrame {
 		
 		JLabel lblNewLabel_1_1 = new JLabel("747");
 		lblNewLabel_1_1.setFont(new Font("Montserrat", Font.BOLD, 16));
-		lblNewLabel_1_1.setBounds(104, 11, 89, 29);
+		lblNewLabel_1_1.setBounds(106, 17, 89, 29);
 		panel_1.add(lblNewLabel_1_1);
 		
 		JButton btnComprar747 = new JButton("Comprar");
 		btnComprar747.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boolean esta = false;
+				
+				boolean estaPersona = false;
+				boolean estaVehiculo = false;
 				Persona comprador = null;
-				while(!esta) {
+				
+				Vehiculo temp = null;
+				
+				while(!estaVehiculo) {
+					int idV = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el id del vehiculo")); 
+							for(Vehiculo v: Main.listaVehiculos) {
+								if(v.idVehiculo == idV) {
+									estaVehiculo = true;
+									if(v.dueno.idPersona == 0) {
+										temp = v;
+									}
+								}
+							}
+							
+							if(!estaVehiculo) {
+								Component Frame = null;
+								JOptionPane.showMessageDialog(Frame,"No se encontro el vehiculo.","Ventana de notificación", JOptionPane.ERROR_MESSAGE);
+							}else if(temp == null){
+								Component Frame = null;
+								JOptionPane.showMessageDialog(Frame,"El vehiculo tiene dueño.","Ventana de notificación", JOptionPane.ERROR_MESSAGE);
+							}
+				}
+				
+				
+				while(!estaPersona) {
 					String respuesta = JOptionPane.showInputDialog("Ingrese su Id"); 
 					int respuestaInt = Integer.parseInt(respuesta);
 					for(Persona p: Main.listado){
 						if(p.idPersona == respuestaInt) {
-							p.setVehiculo(2, Main.listaVehiculos.get(1));
+							temp.dueno = p;
+							p.setVehiculo(contador, temp);
 							comprador = p;
-							esta=true;
+							estaPersona=true;
+							contador++;
 							break;
 						}
 					}
@@ -180,18 +229,11 @@ public class ComprarVehiculo extends JFrame {
 					}
 				}
 				
+				
 			}
 		});
-		btnComprar747.setBounds(301, 39, 89, 23);
+		btnComprar747.setBounds(301, 22, 89, 23);
 		panel_1.add(btnComprar747);
-		
-		Label label_2 = new Label("Color:        Negro");
-		label_2.setBounds(104, 40, 107, 22);
-		panel_1.add(label_2);
-		
-		Label label_1_1 = new Label("Capacidad:        200");
-		label_1_1.setBounds(273, 11, 141, 22);
-		panel_1.add(label_1_1);
 		
 		JLabel lblNewLabel_4 = new JLabel("New label");
 		lblNewLabel_4.setIcon(new ImageIcon(ComprarVehiculo.class.getResource("/proyectogrupal/Imagen/747.jpg")));
@@ -207,22 +249,50 @@ public class ComprarVehiculo extends JFrame {
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Barco Naval");
 		lblNewLabel_1_1_1.setFont(new Font("Montserrat", Font.BOLD, 16));
-		lblNewLabel_1_1_1.setBounds(103, 12, 141, 29);
+		lblNewLabel_1_1_1.setBounds(103, 17, 141, 29);
 		panel_1_1.add(lblNewLabel_1_1_1);
 		
 		JButton btnComprarBarco_Naval = new JButton("Comprar");
 		btnComprarBarco_Naval.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boolean esta = false;
+
+				boolean estaPersona = false;
+				boolean estaVehiculo = false;
 				Persona comprador = null;
-				while(!esta) {
+				
+				Vehiculo temp = null;
+				
+				while(!estaVehiculo) {
+					int idV = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el id del vehiculo")); 
+							for(Vehiculo v: Main.listaVehiculos) {
+								if(v.idVehiculo == idV) {
+									estaVehiculo = true;
+									if(v.dueno.idPersona == 0) {
+										temp = v;
+									}
+								}
+							}
+							
+							if(!estaVehiculo) {
+								Component Frame = null;
+								JOptionPane.showMessageDialog(Frame,"No se encontro el vehiculo.","Ventana de notificación", JOptionPane.ERROR_MESSAGE);
+							}else if(temp == null){
+								Component Frame = null;
+								JOptionPane.showMessageDialog(Frame,"El vehiculo tiene dueño.","Ventana de notificación", JOptionPane.ERROR_MESSAGE);
+							}
+				}
+				
+				
+				while(!estaPersona) {
 					String respuesta = JOptionPane.showInputDialog("Ingrese su Id"); 
 					int respuestaInt = Integer.parseInt(respuesta);
 					for(Persona p: Main.listado){
 						if(p.idPersona == respuestaInt) {
-							p.setVehiculo(3, Main.listaVehiculos.get(2));
+							temp.dueno = p;
+							p.setVehiculo(contador, temp);
 							comprador = p;
-							esta=true;
+							estaPersona=true;
+							contador++;
 							break;
 						}
 					}
@@ -234,12 +304,8 @@ public class ComprarVehiculo extends JFrame {
 				
 			}
 		});
-		btnComprarBarco_Naval.setBounds(301, 39, 89, 23);
+		btnComprarBarco_Naval.setBounds(304, 22, 89, 23);
 		panel_1_1.add(btnComprarBarco_Naval);
-		
-		Label label_2_1 = new Label("Color:        Gris");
-		label_2_1.setBounds(103, 40, 130, 22);
-		panel_1_1.add(label_2_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
 		lblNewLabel_2.setIcon(new ImageIcon(ComprarVehiculo.class.getResource("/proyectogrupal/Imagen/barco_naval.png")));
@@ -255,22 +321,50 @@ public class ComprarVehiculo extends JFrame {
 		
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("Lancha con Motor");
 		lblNewLabel_1_1_1_1.setFont(new Font("Montserrat", Font.BOLD, 16));
-		lblNewLabel_1_1_1_1.setBounds(102, 11, 140, 29);
+		lblNewLabel_1_1_1_1.setBounds(106, 17, 140, 29);
 		panel_1_1_1.add(lblNewLabel_1_1_1_1);
 		
-		JButton btnComprarBarco_Naval_1 = new JButton("Comprar");
-		btnComprarBarco_Naval_1.addActionListener(new ActionListener() {
+		JButton btnComprarBarco_Lancha = new JButton("Comprar");
+		btnComprarBarco_Lancha.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boolean esta = false;
+
+				boolean estaPersona = false;
+				boolean estaVehiculo = false;
 				Persona comprador = null;
-				while(!esta) {
+				
+				Vehiculo temp = null;
+				
+				while(!estaVehiculo) {
+					int idV = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el id del vehiculo")); 
+							for(Vehiculo v: Main.listaVehiculos) {
+								if(v.idVehiculo == idV) {
+									estaVehiculo = true;
+									if(v.dueno.idPersona == 0) {
+										temp = v;
+									}
+								}
+							}
+							
+							if(!estaVehiculo) {
+								Component Frame = null;
+								JOptionPane.showMessageDialog(Frame,"No se encontro el vehiculo.","Ventana de notificación", JOptionPane.ERROR_MESSAGE);
+							}else if(temp == null){
+								Component Frame = null;
+								JOptionPane.showMessageDialog(Frame,"El vehiculo tiene dueño.","Ventana de notificación", JOptionPane.ERROR_MESSAGE);
+							}
+				}
+				
+				
+				while(!estaPersona) {
 					String respuesta = JOptionPane.showInputDialog("Ingrese su Id"); 
 					int respuestaInt = Integer.parseInt(respuesta);
 					for(Persona p: Main.listado){
 						if(p.idPersona == respuestaInt) {
-							p.setVehiculo(4, Main.listaVehiculos.get(3));
+							temp.dueno = p;
+							p.setVehiculo(contador, temp);
 							comprador = p;
-							esta=true;
+							estaPersona=true;
+							contador++;
 							break;
 						}
 					}
@@ -280,67 +374,16 @@ public class ComprarVehiculo extends JFrame {
 					}
 				}
 				
+				
 			}
 		});
-		btnComprarBarco_Naval_1.setBounds(301, 33, 89, 23);
-		panel_1_1_1.add(btnComprarBarco_Naval_1);
-		
-		Label label_2_1_1 = new Label("Color:        Gris");
-		label_2_1_1.setBounds(102, 33, 130, 22);
-		panel_1_1_1.add(label_2_1_1);
+		btnComprarBarco_Lancha.setBounds(303, 22, 89, 23);
+		panel_1_1_1.add(btnComprarBarco_Lancha);
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(ComprarVehiculo.class.getResource("/proyectogrupal/Imagen/lancha.png")));
 		lblNewLabel.setBounds(0, 0, 80, 67);
 		panel_1_1_1.add(lblNewLabel);
-		
-		JPanel panel_1_1_1_1 = new JPanel();
-		panel_1_1_1_1.setLayout(null);
-		panel_1_1_1_1.setBorder(new EmptyBorder(0, 0, 0, 0));
-		panel_1_1_1_1.setBackground(Color.LIGHT_GRAY);
-		panel_1_1_1_1.setBounds(10, 333, 414, 67);
-		getContentPane().add(panel_1_1_1_1);
-		
-		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("BMW    Z4");
-		lblNewLabel_1_1_1_1_1.setFont(new Font("Montserrat", Font.BOLD, 16));
-		lblNewLabel_1_1_1_1_1.setBounds(108, 11, 102, 29);
-		panel_1_1_1_1.add(lblNewLabel_1_1_1_1_1);
-		
-		JButton btnComprarBarco_Naval_1_1 = new JButton("Comprar");
-		btnComprarBarco_Naval_1_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				boolean esta = false;
-				Persona comprador = null;
-				while(!esta) {
-					String respuesta = JOptionPane.showInputDialog("Ingrese su Id"); 
-					int respuestaInt = Integer.parseInt(respuesta);
-					for(Persona p: Main.listado){
-						if(p.idPersona == respuestaInt) {
-							p.setVehiculo(5, Main.listaVehiculos.get(4));
-							comprador = p;
-							esta=true;
-							break;
-						}
-					}
-					if(comprador==null) {
-						Component Frame = null;
-						JOptionPane.showMessageDialog(Frame,"No se encontro una persona con su id","Ventana de notificación", JOptionPane.ERROR_MESSAGE);
-					}
-				}
-				
-			}
-		});
-		btnComprarBarco_Naval_1_1.setBounds(301, 33, 89, 23);
-		panel_1_1_1_1.add(btnComprarBarco_Naval_1_1);
-		
-		Label label_2_1_1_1 = new Label("Color:        Gris");
-		label_2_1_1_1.setBounds(108, 33, 130, 22);
-		panel_1_1_1_1.add(label_2_1_1_1);
-		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon(ComprarVehiculo.class.getResource("/proyectogrupal/Imagen/z4.png")));
-		lblNewLabel_3.setBounds(0, 0, 81, 67);
-		panel_1_1_1_1.add(lblNewLabel_3);
 		
 		JButton btnNewButton = new JButton("Historial");
 		btnNewButton.setIcon(new ImageIcon(ComprarVehiculo.class.getResource("/proyectogrupal/Imagen/historial.png")));

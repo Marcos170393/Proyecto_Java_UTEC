@@ -7,7 +7,7 @@ public class Barco extends Vehiculo{
 
 	public double eslora;
 	public double manga;
-	
+	Persona dueno;
 	
 	/**
 	 * 
@@ -17,8 +17,8 @@ public class Barco extends Vehiculo{
 	 * @param eslora - Recibe double
 	 * @param manga - Recibe double
 	 */
-	public Barco(int idVehiculo, String nombre, String color,double eslora, double manga) {
-		super(idVehiculo, nombre, color);
+	public Barco(int idVehiculo,String nombre, String color,double eslora, double manga) {
+		super(idVehiculo,nombre, color);
 		this.eslora = eslora;
 		this.manga = manga;
 	}
