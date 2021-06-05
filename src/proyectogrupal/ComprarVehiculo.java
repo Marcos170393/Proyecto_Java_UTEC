@@ -104,7 +104,7 @@ public class ComprarVehiculo extends JFrame {
 				
 				Vehiculo temp = null;
 				
-				while(!estaVehiculo) {
+				while(temp == null) {
 					int idV = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el id del Jet")); 
 							for(Vehiculo v: Main.listaVehiculos) {
 								if(v.idVehiculo == idV) {
@@ -189,7 +189,7 @@ public class ComprarVehiculo extends JFrame {
 				
 				Vehiculo temp = null;
 				
-				while(!estaVehiculo) {
+				while(temp == null) {
 					int idV = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el id del vehiculo")); 
 							for(Vehiculo v: Main.listaVehiculos) {
 								if(v.idVehiculo == idV) {
@@ -260,9 +260,9 @@ public class ComprarVehiculo extends JFrame {
 				boolean estaVehiculo = false;
 				Persona comprador = null;
 				
-				Vehiculo temp = null;
+				Vehiculo temp = null; // vehiculo que se esta buscando
 				
-				while(!estaVehiculo) {
+				while(temp == null) {
 					int idV = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el id del vehiculo")); 
 							for(Vehiculo v: Main.listaVehiculos) {
 								if(v.idVehiculo == idV) {
@@ -334,7 +334,7 @@ public class ComprarVehiculo extends JFrame {
 				
 				Vehiculo temp = null;
 				
-				while(!estaVehiculo) {
+				while(temp == null) {
 					int idV = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el id del vehiculo")); 
 							for(Vehiculo v: Main.listaVehiculos) {
 								if(v.idVehiculo == idV) {

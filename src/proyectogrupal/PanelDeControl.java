@@ -151,8 +151,8 @@ public class PanelDeControl extends JFrame {
 				}
 				lblCantPersonas.setText(String.valueOf(cantPersonas));
 				int cantVehiculosTotales= cantAutosCan + cantAutosMon + cantAutosSJ;
-				double promedio = cantVehiculosTotales / cantPersonas;
-				lblPromedioAutos.setText(String.valueOf(promedio)); 
+				double promedio =(double) cantVehiculosTotales / cantPersonas;
+				lblPromedioAutos.setText(String.valueOf(new DecimalFormat("##.##").format(promedio))); 
 				
 				calcularPorc(cantAutosCan, cantVehiculosTotales,progressBar_Can);
 				

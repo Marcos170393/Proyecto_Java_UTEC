@@ -31,13 +31,9 @@ public class Main {
 		Persona pedro = new Persona(2,"Pedro","Maciel","Montevideo",(byte)2,LocalDate.of(1996,05,19));
 		Persona natalia = new Persona(3,"Natalia","Larrosa","Canelones",(byte)4,LocalDate.of(1989,10,20));
 		Persona alejandro = new Persona(4,"Alejadro","Rodriguez","San José",(byte)1,LocalDate.of(1910,11,30));
-		Persona nahuel = new Persona(5,"Nahuel","Rodriguez","San José",(byte)1,LocalDate.of(1910,11,30));
 		Persona enzo = new Persona(6,"Enzo","Gonzalez","San José",(byte)1,LocalDate.of(1910,11,30));
 		Persona barbara = new Persona(7,"Barbara","Sanchez","San José",(byte)1,LocalDate.of(1910,11,30));
 		Persona fabian = new Persona(8,"Fabian","Larrosa","San José",(byte)1,LocalDate.of(1910,11,30));
-		Persona daniel = new Persona(9,"Daniel","Rodriguez","San José",(byte)1,LocalDate.of(1910,11,30));
-		Persona tatiana = new Persona(10,"Tatiana","Perta","San José",(byte)1,LocalDate.of(1910,11,30));
-		Persona damian = new Persona(11,"Damian","Muerte","San José",(byte)1,LocalDate.of(1910,11,30));
 		ingresar(alejandro);
 		ingresar(marcos);
 		ingresar(natalia);
@@ -45,10 +41,6 @@ public class Main {
 		ingresar(enzo);
 		ingresar(barbara);
 		ingresar(fabian);
-		ingresar(daniel);
-		ingresar(alejandro);
-		ingresar(damian);
-		ingresar(nahuel);
 		
 		
 	}
